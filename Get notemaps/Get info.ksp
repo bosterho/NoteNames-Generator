@@ -1,0 +1,44 @@
+//{z#pragma save_compiled_source get_info.txt}
+
+on init
+	declare i
+	declare zone_id
+	declare lowest_key := 127
+	declare highest_key := 0
+	declare low_key
+	declare high_key
+	for i := 0 to get_num_zones() - 1
+		zone_id := get_zone_id(i)
+		low_key := get_zone_par(zone_id, ZONE_PAR_LOW_KEY)
+		high_key := get_zone_par(zone_id, ZONE_PAR_HIGH_KEY)
+		if low_key < lowest_key
+			lowest_key := low_key
+		end if
+		if high_key > highest_key
+			highest_key := high_key
+		end if
+	end for
+	declare key_range[2]
+	key_range[0] := lowest_key
+	key_range[1] := highest_key
+
+	declare num_ks
+	declare ks_keys[32]
+	declare !ks_names[32]
+
+	declare @info_path
+end on
+
+on persistence_changed
+	for i := 0 to 127
+		if get_key_type(i) = NI_KEY_TYPE_CONTROL
+			ks_keys[num_ks] := i
+			ks_names[num_ks] := get_key_name(i)
+			inc(num_ks)
+		end if
+	end for
+	info_path := "C:/Users/Ben/My Drive/Kontakt/Kontakt API/Get nki info for Reaper/"
+	save_array_str(key_range, info_path & "key_range.nka")
+	save_array_str(ks_keys, info_path & "ks_keys.nka")
+	save_array_str(ks_names, info_path & "ks_names.nka")
+end on
