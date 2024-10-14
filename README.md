@@ -6,8 +6,6 @@ These note name txt's can be used in Reaper's piano roll to make note input easi
 
 In the piano roll, there is a view mode called "Named Notes"
 
-![named notes](./images/named notes.png)
-
 In this mode you can rearrange notes by ctrl+dragging them, and you can ctrl+alt+click to hide notes.
 
 For sample libraries with reduced ranges or lots of keyswitches, this could simplify the piano roll significantly. You could only show the playable range, and put the keyswitches all together in a group at the bottom.
