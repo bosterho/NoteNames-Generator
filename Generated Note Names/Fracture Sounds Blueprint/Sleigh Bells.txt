@@ -1,0 +1,11 @@
+# MIDI note/CC name map
+48 Stop Christmas
+50 Start Christmas
+NO 48
+NO 50
+NO 60
+NO 62
+NO 64
+NO 65
+NO 67
+NO 69

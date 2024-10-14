@@ -1,0 +1,46 @@
+# MIDI note/CC name map
+36 Free Trem
+38 Col Legno
+40 Spikes
+41 Bends
+NO 36
+NO 38
+NO 40
+NO 41
+NO 55
+NO 56
+NO 57
+NO 58
+NO 59
+NO 60
+NO 61
+NO 62
+NO 63
+NO 64
+NO 65
+NO 66
+NO 67
+NO 68
+NO 69
+NO 70
+NO 71
+NO 72
+NO 73
+NO 74
+NO 75
+NO 76
+NO 77
+NO 78
+NO 79
+NO 80
+NO 81
+NO 82
+NO 83
+NO 84
+NO 85
+NO 86
+NO 87
+NO 88
+NO 89
+NO 90
+NO 91

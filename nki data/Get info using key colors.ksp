@@ -1,0 +1,29 @@
+//{z#pragma save_compiled_source get_info.txt}
+
+on init
+	declare i
+	declare num_ks
+	declare key_types[128]
+	declare !ks_names[128]
+	declare @info_path
+	declare key_active
+end on
+
+on persistence_changed
+	for i := 0 to 127
+		key_active := 1
+		if get_key_color(i) = KEY_COLOR_INACTIVE or get_key_color(i) = KEY_COLOR_NONE
+			key_active := 0
+		end if
+		if key_active = 1
+			key_types[i] := 1
+			if get_key_type(i) = NI_KEY_TYPE_CONTROL
+				key_types[i] := 2
+				ks_names[i] := get_key_name(i)
+			end if
+		end if
+	end for
+	info_path := "C:/Users/Ben/My Drive/Kontakt/Kontakt API/Get nki info for Reaper/"
+	save_array_str(key_types, info_path & "key_types.nka")
+	save_array_str(ks_names, info_path & "ks_names.nka")
+end on
